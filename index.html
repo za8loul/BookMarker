@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Marker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center flex-column my-5"
+    >
+      <h1 class="text-center py-3">Bookmarker</h1>
+      <div class="inputContainer w-100">
+        <h2 class="text-center py-4">
+          <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+
+        <div class="mb-4 px-3">
+          <label for="siteName" class="form-label">
+            <i class="fa-solid fa-book-bookmark"></i> Site Name
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="siteName"
+            placeholder="Bookmark Name"
+            oninput="validateName ();"
+          />
+        </div>
+        <div class="mb-4 px-3">
+          <label for="siteURL" class="form-label">
+            <i class="fa-solid fa-link"></i> site URL</label
+          >
+          <input
+            type="url"
+            class="form-control"
+            id="siteURL"
+            placeholder="Website URL"
+            oninput="validateUrl ();"
+          />
+        </div>
+        <div
+          onclick="addSite();"
+          class="subBtn d-flex justify-content-center align-items-center"
+        >
+          <button>Submit</button>
+        </div>
+      </div>
+      <table class="table mt-4 text-center bg-light">
+        <thead>
+          <th>index</th>
+          <th>Website Name</th>
+          <th>Visit</th>
+          <th>Delete</th>
+        </thead>
+        <tbody id="tableContent">
+          <td>
+            <button class="visit-btn">
+              <a href="${siteContainer[i].url}" target="_blank"></a
+              ><i class="fa-solid fa-eye"></i> Visit
+            </button>
+          </td>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="JS/index.js"></script>
+  </body>
+</html>
